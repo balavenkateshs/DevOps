@@ -21,12 +21,10 @@ sudo chmod -R g+r conf
 sudo chmod g+x conf
 sudo chown -R tomcat webapps/ work/ temp/ logs/
 echo "Create a systemd Service File"
-# sudo update-java-alternatives -l # to get java path
 sudo systemctl daemon-reload
 echo "Enable executable mode"
 sudo sh -c 'chmod +x /opt/tomcat//bin/*.sh'
 sudo systemctl start tomcat
-sudo systemctl status tomcat
 echo "Adjust the Firewall and Test the Tomcat Server"
 sudo ufw allow 8080
 sudo systemctl start tomcat
